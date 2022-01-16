@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.contrib.auth import views as auth_views  # this is for login
 from django.urls import path, include
 from Users import views as users_views  # we can import the view of any app and from that can access the method
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,3 +28,6 @@ urlpatterns = [
     path('login/', auth_views.LoginView.as_view(template_name='Users/login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='Users/logout.html'), name='logout'),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  # it only works in debug mode
