@@ -1,6 +1,21 @@
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView
 from .models import Post
+
+blogs = [
+    {
+        'author': 'Anam',
+        'title': 'Blog Post 1',
+        'content': 'First Post content',
+        'date_posted': 'August 23, 2021'
+    },
+    {
+        'author': 'Arman',
+        'title': 'Blog Post 2',
+        'content': 'Second Post content',
+        'date_posted': 'August 25, 2021'
+    },
+
+]
 
 
 # for viewing all the blogs
@@ -12,17 +27,6 @@ def blogDashboard(request):
 
 
 # context data will be available in the html file
-
-class PostListView(ListView):
-    model = Post
-    template_name = 'BlogSupport/blog_dashboard.html'
-    context_object_name = 'blogs'
-    ordering = ['-datePosted']
-
-
-class PostDetailView(DetailView):
-    model = Post
-
 
 
 def addBlog(request):

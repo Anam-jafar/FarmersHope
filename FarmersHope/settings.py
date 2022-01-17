@@ -113,10 +113,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # os dependent way of creating media directory
-MEDIA_URL = '/media/'  # public path
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap4'
-LOGIN_REDIRECT_URL = 'blog-dashboard'  # here will be dashboard
+LOGIN_REDIRECT_URL = 'dashboard'  # here will be dashboard
 LOGIN_URL = 'login'
 
 # Default primary key field type

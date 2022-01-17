@@ -20,6 +20,7 @@ from Users import views as users_views  # we can import the view of any app and 
 from django.conf import settings
 from django.conf.urls.static import static
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('blog_dashboard/', include('BlogSupport.urls')),
@@ -27,6 +28,7 @@ urlpatterns = [
     path('profile/', users_views.profile, name='profile'),
     path('login/', auth_views.LoginView.as_view(template_name='Users/login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='Users/logout.html'), name='logout'),
+    path('dashboard/', users_views.dashboard, name='dashboard'),
 ]
 
 if settings.DEBUG:
