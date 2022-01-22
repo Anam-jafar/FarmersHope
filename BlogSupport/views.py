@@ -39,6 +39,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
     fields = ['postTitle', 'postContent']
 
+
     # for create and update
     # <app>/<model>_form.html
     def form_valid(self, form):
