@@ -19,11 +19,14 @@ from django.urls import path, include
 from Users import views as users_views  # we can import the view of any app and from that can access the method
 from django.conf import settings
 from django.conf.urls.static import static
-
+from store import views as store_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('blog_dashboard/', include('BlogSupport.urls')),
+    path('store/', include('store.urls')),
+    path('update_item/', store_views.updateItem, name='update_item'),
+    path('process_order/', store_views.processOrder, name='process_order'),
     path('', users_views.register, name='register'),
     path('profile/', users_views.profile, name='profile'),
     path('login/', auth_views.LoginView.as_view(template_name='Users/login.html'), name='login'),

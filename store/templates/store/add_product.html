@@ -1,0 +1,60 @@
+{% extends 'store/main.html' %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+<div class="content">
+        <div id="content" class="colM">
+          <h1>Add products</h1>
+          <div id="content-main">
+            <form enctype="multipart/form-data" method="post" id="products_form" novalidate=""><input type="hidden" name="csrfmiddlewaretoken" value="kNZVi9YYGj4I6CIN21r501Zdtx77sr8RPaJZi4p1Rq2a0KagDDea1BsvToQJHX03">
+        <div>
+            <fieldset class="module aligned ">
+                <div class="form-row field-product_name">
+                <div>
+                    <label class="required" for="id_product_name">Product name:</label>
+                    <input type="text" name="product_name" class="vTextField" maxlength="100" required="" id="id_product_name">
+                </div>
+        </div>
+        <div class="form-row field-price">
+            <div>
+                <label class="required" for="id_price">Price:</label>
+                <input type="number" name="price" step="any" required="" id="id_price">
+            </div>
+        </div>
+        <div class="form-row field-digital">
+            <div>
+                <label for="id_digital">Digital:</label>
+                <select name="digital" id="id_digital">
+                      <option value="unknown">Unknown</option>
+                      <option value="true">Yes</option>
+                      <option value="false" selected="">No</option>
+
+                </select>
+            </div>
+        </div>
+        <div class="form-row field-image">
+            <div>
+                <label for="id_image">Image:</label>
+                <input type="file" name="image" accept="image/*" id="id_image">
+            </div>
+        </div>
+
+</fieldset>
+
+<div class="submit-row">
+    <input type="submit" value="Save" class="default" name="_save">
+    <input type="submit" value="Save and add another" name="_addanother">
+    <input type="submit" value="Save and continue editing" name="_continue">
+</div>
+    </div>
+    </form>
+    </div>
+         <br class="clear">
+        </div>
+</div>
+</body>
+</html>
