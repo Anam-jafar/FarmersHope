@@ -11,7 +11,13 @@
 
     </div>
     <h2  class="article-title"> {{ question.title }} </h2>
+    {% if question.body %}
+    <p class="article-content">{{ question.body }}</p>
+    {% endif %}
+    {% if question.img %}
     <img src="{{ question.img.url }}" alt="No Image" height="200" width="300">
+    {% endif %}
+
     <p class="article-content">{{ question.body }}</p>
   </div>
     <div class="responses-container">
